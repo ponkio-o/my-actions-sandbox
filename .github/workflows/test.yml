@@ -6,6 +6,7 @@ on:
       - main
     types: [closed]
 
+jobs:
   test:
     name: test
     runs-on: ubuntu-latest
