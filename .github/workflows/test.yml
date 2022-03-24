@@ -18,4 +18,4 @@ jobs:
       - name: Check branch update
         run: ./script/check_branch.sh
         env:
-          COMMIT_HASH: ${{ github.event.pull_request.base.sha }}
+          COMMIT_HASH: ${{ github.event.pull_request.head.sha }}
