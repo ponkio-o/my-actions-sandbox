@@ -20,4 +20,4 @@ jobs:
       - name: Check branch update
         run: ./script/check_branch.sh
         env:
-          FEATURE_BRANCH_NAME: ${{ github.event.pull_request.base.ref }}
+          FEATURE_BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
