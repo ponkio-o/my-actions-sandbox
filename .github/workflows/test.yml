@@ -1,0 +1,20 @@
+name: test
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [closed]
+
+  test:
+    name: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Check branch update
+        run: ./script/check_branch.sh
+        env:
+          COMMIT_HASH: ${{ github.sha }}
