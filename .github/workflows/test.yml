@@ -7,6 +7,8 @@ on:
     types: [closed]
 
 jobs:
+
+
   test:
     name: test
     runs-on: ubuntu-latest
@@ -18,4 +20,4 @@ jobs:
       - name: Check branch update
         run: ./script/check_branch.sh
         env:
-          COMMIT_HASH: ${{ github.event.pull_request.head.sha }}
+          FEATURE_BRANCH_NAME: ${{ github.event.pull_request.base.ref }}
