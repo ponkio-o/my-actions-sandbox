@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "COMMIT_HASH: ${COMMIT_HASH}"
+echo "LATEST_SHA1: ${LATEST_SHA1_IN_CURRENT_REMOTE_BRANCH}"
+echo "REF_NAME   : ${GITHUB_REF_NAME}"
+
 if git ls-remote --exit-code --heads origin "$GITHUB_REF_NAME"; then
   LATEST_SHA1_IN_CURRENT_REMOTE_BRANCH=$(git rev-parse "origin/$GITHUB_REF_NAME")
   if [[ "${COMMIT_HASH}" == "${LATEST_SHA1_IN_CURRENT_REMOTE_BRANCH}" ]]; then
