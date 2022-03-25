@@ -1,14 +1,7 @@
 name: test job
 
-on:
-  pull_request:
-    branches:
-      - main
-    types: [closed]
-
+on: [push]
 jobs:
-
-
   test:
     name: test
     runs-on: ubuntu-latest
