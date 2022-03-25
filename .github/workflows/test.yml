@@ -16,7 +16,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
+      - name: Setup upterm session
+        uses: lhotari/action-upterm@v1
       - name: Check branch update
         run: ./script/check_branch.sh
         env:
