@@ -11,6 +11,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup upterm session
         uses: lhotari/action-upterm@v1
+        with:
+          limit-access-to-actor: true
+          limit-access-to-users: ponkio-o
       - name: Check branch update
         run: ./script/check_branch.sh
         env:
