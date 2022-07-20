@@ -1,0 +1,39 @@
+name: Test inputs
+on:
+  workflow_dispatch:
+    inputs:
+      text:
+        type: string
+        required: true
+        description: 'Text data'
+      optional:
+        type: string
+        required: false
+        description: 'Optional data'
+      secret:
+        type: string
+        required: true
+        description: 'Secret data'
+      flag:
+        type: boolean
+        required: true
+        description: 'Flag data'
+
+jobs:
+  simple-print:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Print inputs
+        run: |
+          echo "${TEXT_DATA}"
+          echo "${OPTIONAL_DATA}"
+          echo "${SECRET_DATA}"
+          echo "${FLAG_DATA}"
+        env:
+          TEXT_DATA: ${{ github.event.inputs.text }}
+          OPTIONAL_DATA: ${{ github.event.inputs.optional }}
+          SECRET_DATA: ${{ github.event.inputs.secret }}
+          FLAG_DATA: ${{ github.event.inputs.flag }}
