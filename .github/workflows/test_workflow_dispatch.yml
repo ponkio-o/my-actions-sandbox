@@ -1,0 +1,27 @@
+name: test job
+
+on:
+  workflow_dispatch:
+      pr_title:
+        required: false
+        default: "[Automatically] Terraform Scaffold Pull Reqest"
+        description: Pull Request title
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "[Automatically] Terraform scaffold"
+          branch-suffix: timestamp
+          delete-branch: true
+          draft: true
+          assignees: ${{ github.actor }}
+          title: ${{ github.event.inputs.pr_title }}
