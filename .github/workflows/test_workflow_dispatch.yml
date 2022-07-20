@@ -6,9 +6,10 @@ on:
       required: false
       default: "[Automatically] Terraform Scaffold Pull Reqest"
       description: Pull Request title
+
 jobs:
-  test:
-    name: test
+  create-pr:
+    name: create PR
     runs-on: ubuntu-latest
 
     steps:
