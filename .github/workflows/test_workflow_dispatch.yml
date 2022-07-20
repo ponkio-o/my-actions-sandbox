@@ -2,10 +2,11 @@ name: workflow dipatch job
 
 on:
   workflow_dispatch:
-    pr_title:
-      required: false
-      default: "[Automatically] Terraform Scaffold Pull Reqest"
-      description: Pull Request title
+    inputs:
+      pr_title:
+        required: false
+        default: "[Automatically] Terraform Scaffold Pull Reqest"
+        description: Pull Request title
 
 permissions:
   contents: write
