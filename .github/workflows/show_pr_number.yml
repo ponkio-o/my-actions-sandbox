@@ -7,12 +7,12 @@ on:
 jobs:
   rerun:
     runs-on: ubuntu-latest
-    name: Re-run PR check workflow
+    name: Slash command debug
     if: contains(github.event.comment.html_url, '/pull/') && startsWith(github.event.comment.body, '/rerun')
 
     steps:
       - name: Print PR Number
         run: |
+          PR_URL="${{ github.event.issue.pull_request.url }}"
+          PR_NUMBER=${PR_URL##*/}
           echo "${PR_NUMBER}"
-        env:
-          PR_NUMBER: ${{ github.event.number }}
