@@ -12,3 +12,5 @@ jobs:
 
       - name: Setup upterm session
         uses: lhotari/action-upterm@v1
+        with:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
