@@ -1,0 +1,19 @@
+name: Show PR Number
+
+on:
+  pull_request:
+    types: [synchronize, opened, ready_for_review]
+    branches:
+      - main
+
+jobs:
+  debug:
+    name: show pr number
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        run: |
+          PR_URL="${{ github.event.issue.pull_request.url }}"
+          PR_NUMBER=${PR_URL##*/}
+          echo $PR_NUMBER
