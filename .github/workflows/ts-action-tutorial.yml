@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: ponkio-o/ts-actio-tutorial@main
+        uses: ponkio-o/ts-action-tutorial@main
         with:
           who-to-greet: 'ponkio-o'
       # Use the output from the `hello` step
