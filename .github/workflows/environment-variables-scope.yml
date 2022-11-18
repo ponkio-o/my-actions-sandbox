@@ -1,15 +1,14 @@
-name: workflow dipatch job
+name: environment variables scope
 
 on:
   workflow_dispatch:
 
 jobs:
   test:
-    name: create PR
     runs-on: ubuntu-latest
 
     env:
-      SUPER_SECERT: ${{ secrets.SUPER_SECERT }}
+      SUPER_SECRET: ${{ secrets.SUPER_SECRET }}
 
     steps:
       - name: Run1
