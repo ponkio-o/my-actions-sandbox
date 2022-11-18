@@ -1,0 +1,27 @@
+name: workflow dipatch job
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: create PR
+    runs-on: ubuntu-latest
+
+    env:
+      SUPER_SECERT: ${{ secrets.SUPER_SECERT }}
+
+    steps:
+      - name: Run1
+        run: echo $SUPER_SECRET
+
+      - name: Run2
+        run: echo $SUPER_SECRET
+
+      - name: Run2
+        run: echo $HYPER_SECRET
+        env:
+          HYPER_SECRET: ${{ secrets.HYPER_SECRET }}
+
+      - name: Run3
+        run: echo $HYPER_SECRET
