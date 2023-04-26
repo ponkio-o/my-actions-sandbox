@@ -1,0 +1,24 @@
+name: Output
+
+on:
+  pull_request:
+    types: [synchronize, opened, ready_for_review]
+    branches:
+      - main
+
+jobs:
+  debug:
+    name: show pr number
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set number
+        id: set
+        run: |
+          VERSION="v8.8.8"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+      - name: Echo Number
+        run: |
+          echo $NUMBER
+        env:
+          NUMBER: ${{ steps.set.outputs.version }}
