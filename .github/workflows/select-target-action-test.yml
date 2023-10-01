@@ -34,5 +34,5 @@ jobs:
 
       - name: ls
         working-directory: ${{ matrix.target }}
-        run: ls test.txt
+        run: cat test.txt
 ...
