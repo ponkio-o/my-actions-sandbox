@@ -12,5 +12,10 @@
         "envs/development",
         "envs/staging",
         "envs/production"
+    ],
+    "default" : [
+        "envs/development",
+        "envs/staging",
+        "envs/production"
     ]
 }
