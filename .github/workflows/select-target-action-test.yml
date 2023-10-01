@@ -2,9 +2,6 @@ name: select-target-action
 
 on:
   pull_request:
-    types: [opened]
-    branches:
-      - main
 
 jobs:
   select_target:
