@@ -1,0 +1,16 @@
+{
+    "target:develop": [
+        "envs/development"
+    ],
+    "target:staging": [
+        "envs/staging"
+    ],
+    "target:production": [
+        "envs/production"
+    ],
+    "target:all" : [
+        "envs/development",
+        "envs/staging",
+        "envs/production"
+    ]
+}
