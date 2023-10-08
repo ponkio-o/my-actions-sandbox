@@ -17,7 +17,7 @@ jobs:
 
       - name: Select target
         id: sta
-        uses: ponkio-o/select-target-action@main
+        uses: ponkio-o/select-target-action@v1.1.0
 
   plan:
     needs: [select_target]
