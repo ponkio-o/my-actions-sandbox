@@ -4,7 +4,7 @@ on:
   pull_request:
 
 jobs:
-  test:
+  matrix_test:
     strategy:
       matrix:
         version: [10, 12, 14]
