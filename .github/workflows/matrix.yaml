@@ -5,15 +5,7 @@ on:
 
 jobs:
   matrix_test:
-    strategy:
-      matrix:
-        version: [10, 12, 14]
-        arch: [amd64, arm64]
     runs-on: ubuntu-latest
 
     steps:
-      - name: Show arch
-        run: echo ${{ matrix.arch }}
-
-      - name: Show version
-        run: echo ${{ matrix.version }}
+      - run: pwd
