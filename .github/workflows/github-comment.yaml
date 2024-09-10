@@ -1,0 +1,27 @@
+name: github-comment
+
+on:
+  pull_request:
+
+jobs:
+  test:
+    permissions:
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: aquaproj/aqua-installer@6ce1f8848ec8e61f14d57bd5d7597057a6dd187c # v3.0.1
+        with:
+          aqua_version: v2.31.0
+      - run: github-comment hide -k hello -var "env:$ENV"
+        env:
+          GH_COMMENT_LOG_LEVEL: debug
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ENV: staging
+      - run: github-comment post -k hello -var "env:$ENV"
+        env:
+          GH_COMMENT_LOG_LEVEL: debug
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ENV: staging

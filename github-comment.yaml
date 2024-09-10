@@ -1,0 +1,9 @@
+post:
+  hello:
+    embedded_var_names:
+      - env
+    template: |
+      hello world!!!!!!!!!!!!!! ({{.Vars.env}})
+
+hide:
+  hello: "Comment.HasMeta"
