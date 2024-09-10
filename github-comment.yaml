@@ -6,4 +6,4 @@ post:
       hello world!!!!!!!!!!!!!! ({{.Vars.env}})
 
 hide:
-  hello: "Comment.HasMeta && (Comment.Meta.SHA1 != Commit.SHA1 && Comment.Meta.Vars.env == {{.Vars.env}})"
+  hello: 'Comment.HasMeta && (Comment.Meta.SHA1 != Commit.SHA1 && Comment.Meta.Vars.env == "staging")'
