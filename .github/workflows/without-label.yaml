@@ -5,7 +5,6 @@ on:
 
 jobs:
   debug:
-    runs-on:
-      labels: []
+    runs-on: ""
     steps:
       - run: echo "hello"
