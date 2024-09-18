@@ -6,6 +6,6 @@ on:
 jobs:
   debug:
     runs-on:
-      labels: ["Linux"]
+      labels: ["ubuntu-latest"]
     steps:
       - run: echo "hello"
