@@ -6,6 +6,6 @@ on:
 jobs:
   debug:
     runs-on:
-      labels: []
+      labels: ["Linux"]
     steps:
       - run: echo "hello"
