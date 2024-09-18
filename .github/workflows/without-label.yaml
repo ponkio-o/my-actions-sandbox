@@ -1,0 +1,11 @@
+name: Without label
+
+on:
+  pull_request:
+
+jobs:
+  debug:
+    runs-on:
+      labels: []
+    steps:
+      - run: echo "hello"
